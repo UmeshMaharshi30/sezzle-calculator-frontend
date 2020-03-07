@@ -19,7 +19,7 @@ export class RegistrationComponent implements OnInit {
       alert("Invalid username");
       return;
     } 
-    console.log(registrationForm.value.username);
+    localStorage.setItem('user', registrationForm.value.username);
     this.router.navigate(['calculation']);
   }
 

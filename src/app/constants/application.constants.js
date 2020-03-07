@@ -27,3 +27,6 @@ export const CALCULATOR_ROWS = [[{type : 2, value : "("},
 {type : 0, value : "="},
 {type : 2, value : "+"}]
 ];
+
+
+export const SOCKET_SERVER_URL = 'http://localhost:8080/sezzle-websocket'

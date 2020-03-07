@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import * as Stomp from 'stompjs';
+import * as SockJS from 'sockjs-client';
+import { CalculatorExpression } from 'src/app/model/calculator-expression';
+import { SOCKET_SERVER_URL } from './../../../constants';
 
 @Component({
   selector: 'app-calculations',
@@ -10,18 +14,26 @@ export class CalculationsComponent implements OnInit {
   title = 'Global Calculations';
 
   private stompClient;
-  private serverUrl = 'http://localhost:8080/gs-guide-websocket'
 
-  messages = [];
+  messages:CalculatorExpression[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
-    this.initializeWebSocketConnection();
+    this.stompClient = Stomp.over(new SockJS(SOCKET_SERVER_URL));
+    this.startListening();
   }
 
-  initializeWebSocketConnection(){
-    
+  startListening():void {
+    let componentInstance = this;
+    this.stompClient.connect({}, function(frame) {
+      componentInstance.stompClient.subscribe("/channel/calculations", (message:any) => {
+        if(message.body) {
+          if(componentInstance.messages.length == 10) componentInstance.messages.pop();
+          componentInstance.messages.unshift(JSON.parse(message.body));
+        }
+      });
+    });
   }
 
 }

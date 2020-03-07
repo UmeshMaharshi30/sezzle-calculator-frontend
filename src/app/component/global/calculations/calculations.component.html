@@ -1,4 +1,4 @@
 <div class="toolbar text-center form-control">{{ title }}</div>
 <div class="" *ngFor="let message of messages">
-  <div class="form-control">{{message.content}}</div>
+  <div class="rounded form-control text-wrap cal-expression">{{message.userName + "  calculated, " + message.expression}}</div>
 </div>

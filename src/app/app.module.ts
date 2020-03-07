@@ -8,6 +8,7 @@ import { ButtonComponent } from './component/calculator/button/button.component'
 import { CalculationsComponent } from './component/global/calculations/calculations.component';
 import { RegistrationComponent } from './component/registration/registration.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { AboutComponent } from './component/about/about.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     BoardComponent,
     ButtonComponent,
     CalculationsComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
