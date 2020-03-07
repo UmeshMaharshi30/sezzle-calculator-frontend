@@ -7,6 +7,8 @@ import { BoardComponent } from './component/calculator/board/board.component';
 import { ButtonComponent } from './component/calculator/button/button.component';
 import { CalculationsComponent } from './component/global/calculations/calculations.component';
 import { RegistrationComponent } from './component/registration/registration.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { RegistrationComponent } from './component/registration/registration.com
   imports: [
     BrowserModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

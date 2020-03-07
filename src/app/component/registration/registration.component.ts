@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {NgForm} from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(registrationForm: NgForm) {;
+    if(registrationForm.status == "INVALID") {
+      alert("Invalid username");
+      return;
+    } 
+    console.log(registrationForm.value.username);
+    this.router.navigate(['calculation']);
   }
 
 }

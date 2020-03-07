@@ -1,11 +1,11 @@
 export class CalculatorButton {
 
-    button_type : string;
-    button_value : string;
+    type : string;
+    value : string;
 
     constructor( _button_type: string, _button_value: string) {  
-        this.button_type = _button_type;
-        this.button_value = _button_value;
+        this.type = _button_type;
+        this.value = _button_value;
     }
 
 }

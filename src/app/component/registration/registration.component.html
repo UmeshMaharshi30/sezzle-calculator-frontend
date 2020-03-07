@@ -1,1 +1,7 @@
-<p>registration works!</p>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate class="form-inline">
+    <div class="form-group mx-sm-3 mb-2">
+      <label for="username" class="sr-only">Username</label>
+      <input type="text" required minlength="4" class="form-control" placeholder="Username" name="username" ngModel required>
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Connect</button>
+  </form>

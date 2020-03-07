@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalculationsComponent implements OnInit {
 
+  title = 'Global Calculations';
+
+  private stompClient;
+  private serverUrl = 'http://localhost:8080/gs-guide-websocket'
+
+  messages = [];
+
   constructor() { }
 
   ngOnInit(): void {
+    this.initializeWebSocketConnection();
+  }
+
+  initializeWebSocketConnection(){
+    
   }
 
 }
